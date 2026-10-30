@@ -2,7 +2,7 @@
 
 **Status:** v0.1.0  
 **Platform:** macOS Apple Silicon (M4 Max) with MPS support  
-**License:** MIT (Kokoro model subject to its own license)
+**License:** MIT OR Apache-2.0 (dual-licensed; Kokoro model subject to its own license)
 
 [![Python](https://img.shields.io/badge/python-3.13-blue)](https://www.python.org/)
 [![uv](https://img.shields.io/badge/build-uv-brightgreen)](https://github.com/astral-sh/uv)
@@ -96,7 +96,7 @@ uv --version
 ### Project Setup
 
 ```bash
-cd /Users/anton.feldmann/backup/Projects/comp/kokoro-tts
+cd kokoro-tts
 
 # Sync dependencies with uv
 uv sync
@@ -213,7 +213,7 @@ The day-to-day loop for a working installation. Every command runs through `uv r
 
 ```bash
 # From the project root
-cd /Users/anton.feldmann/backup/Projects/comp/kokoro-tts
+cd kokoro-tts
 
 # Create/refresh .venv and install the pinned dependencies
 uv sync
@@ -506,7 +506,7 @@ The rate is a property of the model, not a header we may choose: Kokoro advances
 
 ## Testing
 
-Run the test suite without model weights (uses the FakeBackend; 91 tests, no download):
+Run the test suite without model weights (uses the FakeBackend; 96 tests, no download):
 
 ```bash
 uv run pytest tests/ -v
@@ -584,9 +584,22 @@ uv run kokoro-tts serve
 
 ## License
 
-This project uses the MIT license. The Kokoro model is subject to its own license ([hexgrad/Kokoro LICENSE](https://github.com/hexgrad/Kokoro/blob/main/LICENSE)).
+This project is dual-licensed under either of
 
-By using this service, you agree to comply with the model's license terms and any usage restrictions associated with the audio output.
+- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE))
+- MIT License ([LICENSE-MIT](LICENSE-MIT))
+
+at your option. This is the usual arrangement for Rust-ecosystem projects and is
+equally applicable here: choose the license whose terms fit your use case. If you
+contribute to this project, your contribution is accepted under the same dual
+license (inbound = outbound), unless you state otherwise explicitly.
+
+`SPDX-License-Identifier: MIT OR Apache-2.0`
+
+The Kokoro model weights are **not** covered by either license; they are subject
+to the model's own license ([hexgrad/Kokoro LICENSE](https://github.com/hexgrad/Kokoro/blob/main/LICENSE)).
+By using this service you agree to comply with the model's license terms and any
+usage restrictions associated with the generated audio.
 
 ---
 
